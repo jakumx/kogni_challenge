@@ -31,3 +31,5 @@ config :logger, level: :warning
 
 # Initialize plugs at runtime for faster test compilation
 config :phoenix, :plug_init_mode, :runtime
+
+config :kogni_challenge, :pokeapi_api, KogniChallengeWeb.PokemonApi.InMemory
