@@ -1,4 +1,5 @@
 defmodule KogniChallengeWeb.Router do
+  alias KogniChallengeWeb.LoginController
   alias KogniChallengeWeb.PokeapiController
   use KogniChallengeWeb, :router
 
@@ -15,6 +16,7 @@ defmodule KogniChallengeWeb.Router do
     plug :accepts, ["json"]
 
     get "/pokeapi", PokeapiController, :index
+    post "/login", LoginController, :show_create
   end
 
   scope "/", KogniChallengeWeb do
