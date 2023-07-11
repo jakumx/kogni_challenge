@@ -1,4 +1,6 @@
 defmodule KogniChallengeWeb.Router do
+  alias KogniChallengeWeb.LoginController
+  alias KogniChallengeWeb.PokeapiController
   use KogniChallengeWeb, :router
 
   pipeline :browser do
@@ -12,6 +14,9 @@ defmodule KogniChallengeWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+
+    get "/pokeapi", PokeapiController, :index
+    post "/login", LoginController, :show_create
   end
 
   scope "/", KogniChallengeWeb do
@@ -23,6 +28,7 @@ defmodule KogniChallengeWeb.Router do
   # Other scopes may use custom stacks.
   # scope "/api", KogniChallengeWeb do
   #   pipe_through :api
+
   # end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
