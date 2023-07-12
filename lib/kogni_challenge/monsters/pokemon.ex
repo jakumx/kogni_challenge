@@ -8,6 +8,8 @@ defmodule KogniChallenge.Monsters.Pokemon do
     field :pokemon_id, :integer
     field :images, {:array, :string}
 
+    many_to_many :trainers, KogniChallenge.Users.Trainer, join_through: "trainers_pokemons"
+
     timestamps()
   end
 

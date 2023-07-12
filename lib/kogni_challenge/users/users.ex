@@ -101,4 +101,8 @@ defmodule KogniChallenge.Users do
   def change_trainer(%Trainer{} = trainer, attrs \\ %{}) do
     Trainer.changeset(trainer, attrs)
   end
+
+  def find_trainer_by_sub(sub) do
+    Repo.get_by(Trainer, sub: sub)
+  end
 end

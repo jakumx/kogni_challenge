@@ -9,6 +9,8 @@ defmodule KogniChallenge.Users.Trainer do
     field :picture, :string
     field :credential, :string
 
+    many_to_many :pokemons, KogniChallenge.Monsters.Pokemon, join_through: "trainers_pokemons"
+
     timestamps()
   end
 

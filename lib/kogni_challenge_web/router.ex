@@ -1,6 +1,7 @@
 defmodule KogniChallengeWeb.Router do
   alias KogniChallengeWeb.LoginController
   alias KogniChallengeWeb.PokeapiController
+  alias KogniChallengeWeb.PokemonController
   use KogniChallengeWeb, :router
 
   pipeline :browser do
@@ -17,6 +18,8 @@ defmodule KogniChallengeWeb.Router do
 
     get "/pokeapi", PokeapiController, :index
     post "/login", LoginController, :show_create
+    post "/catch", PokemonController, :catch_pokemon
+    post "/box", PokemonController, :show_box
   end
 
   scope "/", KogniChallengeWeb do
